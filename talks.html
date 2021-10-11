@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QSP3L9DGL7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QSP3L9DGL7');
+</script>
+
+<script>
+function inIframe () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+
+if(!inIframe()) {
+window.location.replace("index.html?talks");
+}
+</script>
+
+</head>
+<body class="content">
+<h3>Talks</h3>
+<ol>
+  <li><i>Optimal Sub-Gaussian Mean Estimation in R</i>
+  <ul>
+	<li>TCS+ (Mar 2021)</li>
+    <li>MIT (Feb 2021)</li>
+    <li><a href="https://www.youtube.com/watch?v=Kr0Kl_sXsJM" target="_top">University of Waterloo A&C Seminar (Feb 2021)</a></li>
+	<li>UW Madison (Jan 2021)</li>
+    <li>Johns Hopkins Algorithms and Complexity Seminar (Sep 2020)</li>
+	<li>Columbia University Theory Lunch (Sep 2020)</li>
+  </ul>
+  </li>
+  <br>
+  <li><i>Uncertainty about Uncertainty: Optimal Adaptive
+  Algorithms for Estimating Mixtures of Unknown Coins</i>
+  <ul>
+  <li>SODA 2021</li>
+  <li>University of Cambridge (Jan 2020)</li>
+  <li>Mittagsseminar at ETH Z&uuml;rich (July 2019)</li>
+  <li>Theory Lunch at the Chinese University of Hong Kong (Jan 2019)</li>
+  </ul>
+  </li>
+  <br>
+  <li><i>Augmenting Stream Constraint Programming with Eventuality
+  Conditions</i>
+  <ul>
+    <li>CP 2018</li>
+  </ul>
+  </li>
+  <br>
+  <li><i>Optimizing Star-Convex Functions</i>
+  <ul>
+    <li>FOCS 2016</li>
+    <li>University of Cambridge (June 2016)</li>
+  </ul>
+  </li>
+  <br>
+  <li><i>Towards Practical Infinite Data Stream Constraint Solving:
+  Applications and Implementation</i>
+  <ul>
+    <li>CP 2014</li>
+  </ul>
+  </li>
+</ol>
+</body>
+</html>

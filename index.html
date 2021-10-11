@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=550">
+<title>Jasper Lee &ndash; UW Madison</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script language="javascript" type="text/javascript">
+  function resizeIframe(obj) {
+    obj.style.height = Math.min(obj.contentWindow.document.documentElement.offsetHeight,window.height) + "px";
+  }
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QSP3L9DGL7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QSP3L9DGL7');
+</script>
+</head>
+<body id="whole"
+onresize="resizeIframe(document.getElementById('main'));" onorientationchange="resizeIframe(document.getElementById('main'));">
+<header>
+<a href="index.html" style="color:black; text-decoration:none;">Jasper Lee</a>
+<a href="https://www.cs.wisc.edu/" target="_top"><img
+src="UWlogo.png" alt="UW Madison" height="80"
+width="238" style="margin-top:-15px; float:right"/></a>
+</header>
+<nav>
+<hr>
+<div class="navbar">
+<a target="main" href="main.html">Home</a> |
+<a target="main" href="publ.html">Publications</a> |
+<a target="main" href="talks.html">Talks</a> |
+<a target="main" href="teaching.html">Teaching</a> |
+<a target="main" href="music.html">Music</a> |
+<a target="main" href="photo.html">Photography</a>
+</div>
+</div>
+<hr>
+</nav>
+<main>
+<iframe id="main" name="main" src="main.html" scrolling="yes"
+onload="resizeIframe(document.getElementById('main'));" allowfullscreen></iframe>
+</main>
+<script>
+switch (window.location.search) {
+   case "?main": window.document.getElementById('main').src =
+"main.html"; break;
+   case "?publ": window.document.getElementById('main').src =
+"publ.html"; break;
+   case "?talks": window.document.getElementById('main').src =
+"talks.html"; break;
+   case "?teaching": window.document.getElementById('main').src =
+"teaching.html"; break;
+   case "?music": window.document.getElementById('main').src =
+"music.html"; break;
+   case "?photo": window.document.getElementById('main').src =
+"photo.html"; break;
+   default: break;
+}
+</script>
+<footer>
+<hr>
+<p style="padding-left:12px;"><b>Contact</b>: <i>jasper.lee@wisc.edu</i></p>
+</footer>
+</body>
+</html>

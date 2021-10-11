@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Jasper Lee &ndash; Brown University</title>
+
+<script>
+function inIframe () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+
+if(!inIframe()) {
+window.location.replace("index.html?photo");
+}
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QSP3L9DGL7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QSP3L9DGL7');
+</script>
+
+<!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+<![endif]-->
+
+<!-- Core CSS file -->
+<link rel="stylesheet" href="PhotoSwipe-master/dist/photoswipe.css"> 
+
+<!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+     In the folder of skin CSS file there are also:
+     - .png and .svg icons sprite, 
+     - preloader.gif (for browsers that do not support CSS animations) -->
+<link rel="stylesheet" href="PhotoSwipe-master/dist/default-skin/default-skin.css"> 
+
+<!-- Core JS file -->
+<script src="PhotoSwipe-master/dist/photoswipe.min.js"></script> 
+
+<!-- UI JS file -->
+<script src="PhotoSwipe-master/dist/photoswipe-ui-default.js"></script> 
+
+<style>
+
+html {
+  scroll-behavior: smooth;
+}
+
+.photonavbar {
+  position: sticky;
+  top: 0px;
+display: block;
+margin: 0px;
+margin-top: 10px;
+background: rgb(230,230,230);
+padding-top: 10px;
+padding-bottom: 10px;
+z-index: 100;
+}
+
+.photonavbar a {
+padding-left: 5px;
+padding-right: 5px;
+text-decoration: none;
+}
+
+.my-gallery {
+  width: 100%;
+  display: block;
+}
+.my-gallery a {
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.my-gallery img {
+  max-width: 150px;
+  height: auto;
+  max-height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-gallery figure {
+  display: block;
+  float: left;
+  margin: 0 5px 5px 0;
+  width: 150px;
+}
+.my-gallery figcaption {
+  display: none;
+}
+.my-gallery img:hover {
+  box-shadow: 0 0 3px 2px rgba(0, 140, 186, 0.5);
+}
+.my-gallery table {
+  width: 100%;
+  display: block;
+}
+
+h3::before { 
+  display: block; 
+  content: " "; 
+  margin-top: -50px; 
+  height: 50px; 
+  visibility: hidden; 
+  pointer-events: none;
+}
+
+body {
+  overflow: scroll;
+}
+</style>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</head>
+<body class="content">
+I am also an amateur photographer, mostly focusing on landscapes.
+
+<p class="photonavbar" style="text-align: center">
+<a href="#PVD">Providence</a> |
+<a href="#CH">Switzerland</a> |
+<a href="#CBG">Cambridge</a> |
+<a href="#AZ">Arizona</a> |
+<a href="#HK">Hong Kong</a>
+</p>
+
+<h3 id="PVD">Providence</h3>
+
+<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+  <table>
+    <tr>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/PVD/Henderson Bridge-web.jpg" itemprop="contentUrl" data-size="1500x750">
+          <img src="photos/PVD/Henderson Bridge-thumbnail.jpg"
+    itemprop="thumbnail" alt="Henderson Bridge at Sunrise" />
+      </a>
+                                          <figcaption
+	itemprop="caption description">Henderson Bridge at Sunrise</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/PVD/Seekonk River East PVD-web.jpg" itemprop="contentUrl" data-size="1500x1000">
+          <img src="photos/PVD/Seekonk River East PVD-thumbnail.jpg"
+    itemprop="thumbnail" alt="East Providence" />
+      </a>
+                                          <figcaption
+	itemprop="caption description">East Providence at Sunrise,
+      from the Providence side of Seekonk River</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/PVD/Crook Point Bridge-web.jpg" itemprop="contentUrl" data-size="1500x750">
+          <img src="photos/PVD/Crook Point Bridge-thumbnail.jpg"
+    itemprop="thumbnail" alt="Crook Point Bridge" />
+      </a>
+                                          <figcaption
+	itemprop="caption description">Crook Point Bridge at Sunrise</figcaption>
+                                          
+    </figure>
+      </td>
+    </tr>
+    <tr>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/PVD/PVD flower-web.jpg" itemprop="contentUrl" data-size="1500x1500">
+          <img src="photos/PVD/PVD flower-thumbnail.jpg"
+    itemprop="thumbnail" alt="Flower" />
+      </a>
+                                          <figcaption
+	itemprop="caption description">Just a nice flower from one of
+      the sunrise photography trips.</figcaption>
+                                          
+    </figure>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+
+<h3 id="CH">Switzerland</h3>
+
+<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+
+  <table>
+    <tr>
+      <td>
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+	<a href="photos/CH/Rheinfall-1-web.jpg" itemprop="contentUrl" data-size="1500x600">
+	<img src="photos/CH/Rheinfall-1-thumbnail.jpg"
+	itemprop="thumbnail" alt="Rheinfall, Black and White" />
+	</a>
+	<figcaption itemprop="caption description">Rheinfall</figcaption>                                  
+	</figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Rheinfall-2-web.jpg" itemprop="contentUrl" data-size="1500x750">
+          <img src="photos/CH/Rheinfall-2-thumbnail.jpg"
+    itemprop="thumbnail" alt="Rheinfall, Looking Downstream" />
+      </a>
+                                          <figcaption
+      itemprop="caption description">Rheinfall, looking downstream</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Lugano-web.jpg" itemprop="contentUrl" data-size="1500x600">
+          <img src="photos/CH/Lugano-thumbnail.jpg"
+    itemprop="thumbnail" alt="Lugano" />
+      </a>
+                                          <figcaption itemprop="caption description">Lugano</figcaption>
+                                          
+    </figure>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Bre-web.jpg" itemprop="contentUrl" data-size="1500x1071">
+          <img src="photos/CH/Bre-thumbnail.jpg"
+    itemprop="thumbnail" alt="The village of Brè" />
+      </a>
+                                          <figcaption
+      itemprop="caption description">The village of Brè</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Lake Lugano-web.jpg" itemprop="contentUrl" data-size="1500x844">
+          <img src="photos/CH/Lake Lugano-thumbnail.jpg"
+    itemprop="thumbnail" alt="Lake Lugano" />
+      </a>
+                                          <figcaption
+      itemprop="caption description">Lake Lugano</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Monte Boglia-web.jpg" itemprop="contentUrl" data-size="1500x1001">
+          <img src="photos/CH/Monte Boglia-thumbnail.jpg"
+    itemprop="thumbnail" alt="Monte Boglia" />
+      </a>
+                                          <figcaption
+      itemprop="caption description">Monte Boglia</figcaption>
+                                          
+    </figure>
+      </td>
+    </tr>
+    <tr>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Zurich-web.jpg" itemprop="contentUrl" data-size="1500x1001">
+          <img src="photos/CH/Zurich-thumbnail.jpg"
+    itemprop="thumbnail" alt="Zürich" />
+      </a>
+                                          <figcaption itemprop="caption description">Zürich</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Zurich-2-web.jpg" itemprop="contentUrl" data-size="1500x844">
+          <img src="photos/CH/Zurich-2-thumbnail.jpg"
+    itemprop="thumbnail" alt="Zürich" />
+      </a>
+                                          <figcaption itemprop="caption description">Zürich</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Bern-web.jpg" itemprop="contentUrl" data-size="1500x1001">
+          <img src="photos/CH/Bern-thumbnail.jpg"
+    itemprop="thumbnail" alt="Bern" />
+      </a>
+                                          <figcaption itemprop="caption description">Bern</figcaption>
+                                          
+    </figure>
+      </td>
+    </tr>
+    <tr>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Lucerne-web.jpg" itemprop="contentUrl" data-size="1500x600">
+          <img src="photos/CH/Lucerne-thumbnail.jpg"
+    itemprop="thumbnail" alt="Lucerne, Chapel Bridge" />
+      </a>
+                                          <figcaption
+  itemprop="caption description">Lucerne, Chapel Bridge</figcaption>
+                                          
+    </figure>
+  </td>
+  <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Stoosbahn-web.jpg" itemprop="contentUrl" data-size="1500x750">
+          <img src="photos/CH/Stoosbahn-thumbnail.jpg"
+    itemprop="thumbnail" alt="Stoosbahn" />
+      </a>
+                                          <figcaption
+  itemprop="caption description">Swiss Engineering - Vernacular from Schwyz to Stoos and Fronalpstock. The actual vehicles are way more interesting than the station, but I didn't get a chance to photograph them.</figcaption>
+                                          
+    </figure>
+  </td>
+  <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Stoos-web.jpg" itemprop="contentUrl" data-size="1500x1001">
+          <img src="photos/CH/Stoos-thumbnail.jpg"
+    itemprop="thumbnail" alt="Stoos" />
+      </a>
+                                          <figcaption itemprop="caption description">Stoos</figcaption>
+                                          
+    </figure>
+  </td>
+</tr>
+<tr>
+  <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Fronalpstock-web.jpg" itemprop="contentUrl" data-size="1500x1000">
+          <img src="photos/CH/Fronalpstock-thumbnail.jpg"
+    itemprop="thumbnail" alt="Fronalpstock" />
+      </a>
+                                          <figcaption
+  itemprop="caption description">Fronalpstock - This looks a bit like
+  the Windows XP wallpaper to me.</figcaption>
+                                          
+    </figure>
+  </td>
+  <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CH/Furggeli-web.jpg" itemprop="contentUrl" data-size="1500x844">
+          <img src="photos/CH/Furggeli-thumbnail.jpg"
+    itemprop="thumbnail" alt="Furggeli" />
+      </a>
+                                          <figcaption
+  itemprop="caption description">Furggeli</figcaption>
+                                          
+    </figure>
+  </td>
+</tr>
+
+</table>
+
+</div>
+
+<h3 id="CBG">Cambridge</h3>
+
+<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+
+  <table>
+    <tr>
+      <td>
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+	<a href="photos/CBG/John's Chapel-web.jpg" itemprop="contentUrl" data-size="1500x1200">
+	<img src="photos/CBG/John's Chapel-thumbnail.jpg"
+	itemprop="thumbnail" alt="Chapel of St John's College, Cambridge" />
+	</a>
+	<figcaption itemprop="caption description">Chapel of St John's College, Cambridge</figcaption>                                  
+	</figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CBG/Trinity Chapel-web.jpg" itemprop="contentUrl" data-size="1500x1072">
+          <img src="photos/CBG/Trinity Chapel-thumbnail.jpg"
+    itemprop="thumbnail" alt="Chapel of Trinity College, Cambridge" />
+      </a>
+                                          <figcaption
+      itemprop="caption description">Chapel of Trinity College,
+    Cambridge - I played in a few concerts in there back in the days</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CBG/King's Chapel BW-web.jpg" itemprop="contentUrl" data-size="1001x1500">
+          <img src="photos/CBG/King's Chapel BW-thumbnail.jpg"
+    itemprop="thumbnail" alt="Chapel of King's College, Cambridge" />
+      </a>
+                                          <figcaption
+      itemprop="caption description">The world famous chapel of King's
+      College, Cambridge - I also played in a few concerts in there back
+      in the days</figcaption>
+                                          
+    </figure>
+      </td>
+    </tr>
+    <tr>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CBG/Bikes-web.jpg" itemprop="contentUrl" data-size="1500x1500">
+          <img src="photos/CBG/Bikes-thumbnail.jpg"
+    itemprop="thumbnail" alt="Bikes at Pembroke College, Cambridge" />
+      </a>
+                                          <figcaption
+      itemprop="caption description">Cambridge has a lot of
+      bikes... (Pembroke College)</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CBG/Jerwood-web.jpg" itemprop="contentUrl" data-size="1125x1500">
+          <img src="photos/CBG/Jerwood-thumbnail.jpg"
+    itemprop="thumbnail" alt="Jerwood Library, Trinity Hall, Cambridge" />
+      </a>
+                                          <figcaption
+      itemprop="caption description">Blue Hour at the Jerwood Library, Trinity Hall, Cambridge</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CBG/Chu back-web.jpg" itemprop="contentUrl" data-size="1500x750">
+          <img src="photos/CBG/Chu back-thumbnail.jpg"
+    itemprop="thumbnail" alt="Churchill College, Cambridge" />
+      </a>
+                                          <figcaption
+      itemprop="caption description">Churchill College, Cambridge -
+      This was my home for 4 years.</figcaption>                                          
+    </figure>
+      </td>
+    </tr>
+
+  <tr>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CBG/Hepworth-web.jpg" itemprop="contentUrl" data-size="1500x750">
+          <img src="photos/CBG/Hepworth-thumbnail.jpg"
+    itemprop="thumbnail" alt="The Hepworth at Churchill College, Cambridge" />
+      </a>
+                                          <figcaption
+      itemprop="caption description">The Hepworth at Churchill College, Cambridge</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CBG/King's backs-web.jpg" itemprop="contentUrl" data-size="1500x750">
+          <img src="photos/CBG/King's backs-thumbnail.jpg"
+    itemprop="thumbnail" alt="King's College Cambridge from the backs" />
+      </a>
+                                          <figcaption
+      itemprop="caption description">The stereotypical photo of
+      Cambridge with King's College as the subject. The weather
+      conditions during my trip wasn't great though, and so this is
+      the best I could muster...</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/CBG/Trinity-web.jpg" itemprop="contentUrl" data-size="1500x750">
+          <img src="photos/CBG/Trinity-thumbnail.jpg"
+    itemprop="thumbnail" alt="Trinity College, Cambridge" />
+      </a>
+                                          <figcaption
+      itemprop="caption description">Trinity College, Cambridge</figcaption>                                          
+    </figure>
+      </td>
+    </tr>
+    
+
+</table>
+
+</div>
+
+<h3 id="AZ">Arizona</h3>
+
+<div class="my-gallery" itemscope
+  itemtype="http://schema.org/ImageGallery">
+  <table>
+    <tr>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/AZ/Grand Canyon-web.jpg" itemprop="contentUrl" data-size="1500x1001">
+          <img src="photos/AZ/Grand Canyon-thumbnail.jpg"
+    itemprop="thumbnail" alt="Grand Canyon South Rim" />
+      </a>
+                                          <figcaption
+	itemprop="caption description">Grand Canyon South Rim</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/AZ/Sedona Sunset-web.jpg" itemprop="contentUrl" data-size="1500x600">
+          <img src="photos/AZ/Sedona Sunset-thumbnail.jpg"
+    itemprop="thumbnail" alt="Sunset in Sedona" />
+      </a>
+                                          <figcaption
+	itemprop="caption description">Sunset, red rocks in Sedona</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/AZ/Watson Lake-web.jpg" itemprop="contentUrl" data-size="1500x938">
+          <img src="photos/AZ/Watson Lake-thumbnail.jpg"
+    itemprop="thumbnail" alt="Watson Lake, Prescott" />
+      </a>
+                                          <figcaption
+	itemprop="caption description">Watson Lake, Prescott</figcaption>
+                                          
+    </figure>
+      </td>
+    </tr>
+    <tr>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/AZ/Dragonfly-web.jpg" itemprop="contentUrl" data-size="1500x1500">
+          <img src="photos/AZ/Dragonfly-thumbnail.jpg"
+    itemprop="thumbnail" alt="Dragonfly at Watson Lake" />
+      </a>
+                                          <figcaption
+	itemprop="caption description">Dragonfly at Watson Lake, Prescott</figcaption>
+                                          
+    </figure>
+      </td>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/AZ/Sedona-web.jpg" itemprop="contentUrl" data-size="1500x938">
+          <img src="photos/AZ/Sedona-thumbnail.jpg"
+    itemprop="thumbnail" alt="Sedona" />
+      </a>
+                                          <figcaption
+	itemprop="caption description">Sedona</figcaption>
+                                          
+    </figure>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<h3 id="HK">Hong Kong</h3>
+
+<div class="my-gallery" itemscope
+  itemtype="http://schema.org/ImageGallery">
+  <table>
+    <tr>
+      <td>
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/HK/Victoria Harbour-web.jpg" itemprop="contentUrl" data-size="1500x994">
+          <img src="photos/HK/Victoria Harbour-thumbnail.jpg"
+    itemprop="thumbnail" alt="Victoria Harbour" />
+      </a>
+                                          <figcaption
+	itemprop="caption description">Be Water - Victoria Harbour</figcaption>
+                                          
+    </figure>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<script>
+var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+    // parse slide data (url, title, size ...) from DOM elements 
+    // (children of gallerySelector)
+    var parseThumbnailElements = function(el) {
+        var thumbElements = el.getElementsByTagName('figure'),
+            numNodes = thumbElements.length,
+            items = [],
+            figureEl,
+            linkEl,
+            size,
+            item;
+
+        for(var i = 0; i < numNodes; i++) {
+
+            figureEl = thumbElements[i]; // <figure> element
+
+            // include only element nodes 
+            if(figureEl.nodeType !== 1) {
+                continue;
+            }
+
+            linkEl = figureEl.children[0]; // <a> element
+
+            size = linkEl.getAttribute('data-size').split('x');
+
+            // create slide object
+            item = {
+                src: linkEl.getAttribute('href'),
+                w: parseInt(size[0], 10),
+                h: parseInt(size[1], 10)
+            };
+
+
+
+            if(figureEl.children.length > 1) {
+                // <figcaption> content
+                item.title = figureEl.children[1].innerHTML; 
+            }
+
+            if(linkEl.children.length > 0) {
+                // <img> thumbnail element, retrieving thumbnail url
+                item.msrc = linkEl.children[0].getAttribute('src');
+            } 
+
+            item.el = figureEl; // save link to element for getThumbBoundsFn
+            items.push(item);
+        }
+
+        return items;
+    };
+
+    // find nearest parent element
+    var closest = function closest(el, fn) {
+        return el && ( fn(el) ? el : closest(el.parentNode, fn) );
+    };
+
+    // triggers when user clicks on thumbnail
+    var onThumbnailsClick = function(e) {
+        e = e || window.event;
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+        var eTarget = e.target || e.srcElement;
+
+        // find root element of slide
+        var clickedListItem = closest(eTarget, function(el) {
+            return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+        });
+
+        if(!clickedListItem) {
+            return;
+        }
+
+        // find index of clicked item by looping through all child nodes
+        // alternatively, you may define index via data- attribute
+        var clickedGallery = clickedListItem.parentNode.parentNode.parentNode.parentNode.parentNode,
+            clickedRow = clickedListItem.parentNode.parentNode,
+            clickedBody = clickedRow.parentNode,
+            childNodes = clickedRow.childNodes, // elements in only the *clicked* row, excluding other rows
+            numChildNodes = childNodes.length,
+            nodeIndex = 0,
+            prevRowsSum = 0,
+            index;
+
+        for (var i = 0; i < numChildNodes; i++) {
+            if(childNodes[i].nodeType !== 1) { 
+                continue; 
+            }
+
+            if(childNodes[i].children[0] === clickedListItem) {
+                index = nodeIndex;
+                break;
+            }
+            nodeIndex++;
+        }
+
+        numRows = clickedBody.children.length;
+        allRows = clickedBody.children;
+
+        for (var i = 0; i < numRows; i++) {
+            if(allRows[i] == clickedRow) {
+                break;
+            }
+            prevRowsSum = prevRowsSum + allRows[i].children.length;
+        }
+
+        index = prevRowsSum + nodeIndex;
+
+        if(index >= 0) {
+            // open PhotoSwipe if valid index found
+            openPhotoSwipe( index, clickedGallery );
+        }
+        return false;
+    };
+
+    // parse picture index and gallery index from URL (#&pid=1&gid=2)
+    var photoswipeParseHash = function() {
+        var hash = window.location.hash.substring(1),
+        params = {};
+
+        if(hash.length < 5) {
+            return params;
+        }
+
+        var vars = hash.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            if(!vars[i]) {
+                continue;
+            }
+            var pair = vars[i].split('=');  
+            if(pair.length < 2) {
+                continue;
+            }           
+            params[pair[0]] = pair[1];
+        }
+
+        if(params.gid) {
+            params.gid = parseInt(params.gid, 10);
+        }
+
+        return params;
+    };
+
+    var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+        var pswpElement = document.querySelectorAll('.pswp')[0],
+            gallery,
+            options,
+            items;
+
+        items = parseThumbnailElements(galleryElement);
+
+        // define options (if needed)
+        options = {
+
+            // define gallery index (for URL)
+            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+            getThumbBoundsFn: function(index) {
+                // See Options -> getThumbBoundsFn section of documentation for more info
+                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                    rect = thumbnail.getBoundingClientRect(); 
+
+                return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+            }
+
+        };
+
+        // PhotoSwipe opened from URL
+        if(fromURL) {
+            if(options.galleryPIDs) {
+                // parse real index when custom PIDs are used 
+                // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                for(var j = 0; j < items.length; j++) {
+                    if(items[j].pid == index) {
+                        options.index = j;
+                        break;
+                    }
+                }
+            } else {
+                // in URL indexes start from 1
+                options.index = parseInt(index, 10) - 1;
+            }
+        } else {
+            options.index = parseInt(index, 10);
+        }
+
+        // exit if index not found
+        if( isNaN(options.index) ) {
+            return;
+        }
+
+        if(disableAnimation) {
+            options.showAnimationDuration = 0;
+        }
+
+        // Pass data to PhotoSwipe and initialize it
+        gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
+    };
+
+    // loop through all gallery elements and bind events
+    var galleryElements = document.querySelectorAll(gallerySelector);
+
+    for(var i = 0, l = galleryElements.length; i < l; i++) {
+        galleryElements[i].setAttribute('data-pswp-uid', i+1);
+        galleryElements[i].onclick = onThumbnailsClick;
+    }
+
+    // Parse URL and open gallery if it contains #&pid=3&gid=1
+    var hashData = photoswipeParseHash();
+    if(hashData.pid && hashData.gid) {
+        openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
+    }
+};
+
+// execute above function
+initPhotoSwipeFromDOM('.my-gallery');
+</script>
+
+ 
+</body>
+</html>
