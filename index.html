@@ -3,11 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=550">
-<title>Jasper Lee &ndash; UW Madison</title>
+<title>Jasper Lee &ndash; UC Davis</title>
 <link rel="stylesheet" type="text/css" href="style.css">
-<script language="javascript" type="text/javascript">
-  function resizeIframe(obj) {
-    obj.style.height = Math.min(obj.contentWindow.document.documentElement.offsetHeight,window.height) + "px";
+<script language="javascript" type="text/javascript">  
+  function resizeUCDLogo(obj) {
+	  temp = window.innerWidth;
+	  if (temp >= 704) {
+	  	  obj.style.width = Math.min(254,temp-450) + "px";
+	      obj.style.height = Math.min(65,Math.min(254,temp-450)/3600.0*921) + "px";
+	  	  obj.style.top = Math.max(0,704-temp)/7200.0*921 + "px";
+	  } else if (temp >= 550) {
+	  	  obj.style.width = Math.min(254,temp-450) + "px";
+	      obj.style.height = Math.min(65,Math.min(254,temp-450)/3600.0*921) + "px";
+	  	  obj.style.top = Math.max(0,704-temp)/7200.0*921 + 55*(temp-704)/704.0/2 + "px";
+	  } else {
+		  obj.style.width = 0 + "px";
+		  obj.style.height = 0 + "px";
+	  }
+  }
+  
+  function resizeName(obj) {
+  	  temp = window.innerWidth;
+	  if (temp < 704) {
+	      obj.style.paddingTop = 30*temp/704.0 + "px";
+	      obj.style.paddingLeft = 20*temp/704.0 + "px";
+	      obj.style.paddingRight = 20*temp/704.0 + "px";
+	      obj.style.paddingBottom = 25*temp/704.0 + "px";
+	      obj.style.font = "bold " + 45*temp/704.0 +"px Palatino, serif";
+	  } else {
+	      obj.style.paddingTop = "30px";
+	      obj.style.paddingLeft = "20px";
+	      obj.style.paddingRight = "20px";
+	      obj.style.paddingBottom = "25px";
+	      obj.style.font = "bold 45px Palatino, serif";
+	  }
   }
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -21,12 +50,12 @@
 </script>
 </head>
 <body id="whole"
-onresize="resizeIframe(document.getElementById('main'));" onorientationchange="resizeIframe(document.getElementById('main'));">
-<header>
-<a href="index.html" style="color:black; text-decoration:none;">Jasper Lee</a>
-<a href="https://www.cs.wisc.edu/" target="_top"><img
-src="UWlogo.png" alt="UW Madison" height="80"
-width="238" style="margin-top:-15px; float:right"/></a>
+onresize="resizeUCDLogo(document.getElementById('UCDLogo'));resizeName(document.getElementById('hdr'));" onorientationchange="resizeUCDLogo(document.getElementById('UCDLogo'));resizeName(document.getElementById('hdr'));">
+<header id="hdr">
+<a href="index.html" style="color:black; text-decoration:none; vertical-align:middle; margin-left:30px;">Jasper Lee</a>
+<a href="https://cs.ucdavis.edu/" target="_top""><img
+src="UCDlogo.png" id="UCDLogo" alt="UC Davis" height="0"
+width="0" style="margin-top:-5px; margin-right:20px; float:right; position:relative;"/></a>
 </header>
 <nav>
 <hr>
@@ -43,7 +72,7 @@ width="238" style="margin-top:-15px; float:right"/></a>
 </nav>
 <main>
 <iframe id="main" name="main" src="main.html" scrolling="yes"
-onload="resizeIframe(document.getElementById('main'));" allowfullscreen></iframe>
+onload="resizeUCDLogo(document.getElementById('UCDLogo'));resizeName(document.getElementById('hdr'));" allowfullscreen></iframe>
 </main>
 <script>
 switch (window.location.search) {
@@ -64,7 +93,7 @@ switch (window.location.search) {
 </script>
 <footer>
 <hr>
-<p style="padding-left:12px;"><b>Contact</b>: <i>jasper.lee@wisc.edu</i></p>
+<p style="padding-left:12px;"><b>Contact</b>: <i>jasperlee@ucdavis.edu</i></p>
 </footer>
 </body>
 </html>

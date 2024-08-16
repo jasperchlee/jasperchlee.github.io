@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QSP3L9DGL7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QSP3L9DGL7');
+</script>
+
+<script>
+function inIframe () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+
+if(!inIframe()) {
+window.location.replace("index.html?recruit");
+}
+</script>
+
+</head>
+<body class="content">
+<h3>Interested in working with me?</h3>
+<p>
+I have two main lines of work, and I am recruiting talented PhD students in both areas.
+</p>
+<dl>
+	<dt><b>Learning theory, algorithmic and statistical foundations of data science</b></dt>
+	<dd>
+		<p>
+			I am interested in revisiting and solving fundamental statistical problems, including those as basic as mean estimation: suppose we get i.i.d. samples from a real-valued distribution, how do we most accurately estimate the distribution mean?
+			The sample mean/average is the ubiquitous estimator, yet it is also well-known to be sensitive to extreme values.
+			In fact, the sample mean is provably (highly) sub-optimal in finite-sample regimes.
+		</p>
+		<p>
+			The question remains, then, what <i>is</i> the best possible estimator?
+		</p>
+		<p>
+			Paul Valiant and I constructed the first <a href="https://arxiv.org/abs/2011.08384" target="_top">1-d mean estimator</a> whose error is tight even in the leading constant, for finite-but-unknown variance distributions.
+			The <i>same</i> estimator is furthermore robust to infinite-variance distributions and adversarially-corrupted samples.
+		</p>
+		<p>
+			<b>What's next?</b> Right now, even the construction of an optimal 2-d mean estimator is an open problem!
+			In addition to mean estimation, there are plenty of other interesting and challenging problems to work on in this space, and there is a strong connection to the field of <i>robust statistics</i>, where parts of the input data can be adversarially corrupted.
+			I am looking for mathematically-strong students to join me in this line of work.
+		</p>
+	</dd>
+	<dt><b>Machine learning for optimization under uncertainty</b></dt>
+	<dd><p>Many real-life decision making can be modelled as optimization problems (e.g. scheduling, trading), but these optimizations might depend on parameters that are revealed <i>after</i> the solution is needed.
+		For example, to schedule a new week's restaurant shifts, we will need to predict the customer demand over the next week.</p>
+		<p>The field of Predict+Optimize (or Smart-Predict-Then-Optimize), pioneered by the work of Elmachtoub and Grigas, is concerned with training prediction models that make good parameter predictions from relevant features, so that the resulting optimization solution has good objective value <i>even under the true parameters revealed in the future</i>.
+		This requires training for models that are aware of the optimization problems downstream.</p>
+		<p>My team was the first to propose an <a href="https://arxiv.org/abs/2311.08022" target="_top">extension</a> to the framework, where even the optimization <i>constraints</i> can be uncertain &mdash; this is highly non-trivial, because if we mis-predict the constraint set, we can't even guarantee feasibility under the true parameters!
+		<b>My current focus</b> is to vastly expand the space of settings where we can intelligently do Predict+Optimize.</p>
+		<p>This line of work is mostly empirical and not theoretical (so far).
+		Basic knowledge in multivariable calculus, (discrete) optimization/mathematical programming, as well as strong programming skills, are all desirable.</p>
+	</dd>
+</dl>
+
+<p>If you're interested in joining my group, please feel free to reach out via email. Do prepend the string "[Maillard Reaction]" to your email subject, so I know you read through this page.</p>
+</body>
+</html>
