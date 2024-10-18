@@ -8,6 +8,7 @@
 \usepackage{verbatim}
 \usepackage{dsfont}
 \usepackage{bm}
+\usepackage{algorithm}
 
 \usepackage{xcolor}
 \definecolor{green}{rgb}{0.0, 0.5, 0.0}
@@ -139,6 +140,10 @@
 \newtheorem{exercise}[nTheorems]{Exercise}
 \newtheorem{remark}[nTheorems]{Remark}
 
+\makeatletter
+	\let\c@algorithm\c@nTheorems
+\makeatother
+
 \usepackage{xpatch}
 \makeatletter
 \AtBeginDocument{\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}}
@@ -156,6 +161,7 @@
 \newcommand{\lecture}[3]{
 	\setcounter{nLectures}{#1}
 	\renewcommand{\thenTheorems}{\arabic{nLectures}.\arabic{nTheorems}}
+	\renewcommand{\thealgorithm}{\arabic{nLectures}.\arabic{nTheorems}}
 	\noindent
 	\begin{center}
 	\framebox{
