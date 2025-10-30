@@ -1,0 +1,184 @@
+% Adapted from the MIT/Berkeley scribe note template
+
+\documentclass[11pt,letter]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{dsfont}
+\usepackage{bm}
+\usepackage{algorithm}
+
+\usepackage{xcolor}
+\definecolor{green}{rgb}{0.0, 0.5, 0.0}
+\usepackage[colorlinks,citecolor=blue,linkcolor=magenta,bookmarks=true,hypertexnames=false]{hyperref}
+\usepackage[nameinlink,capitalize]{cleveref}
+\providecommand\algorithmname{algorithm}
+\crefname{equation}{equation}{equations}
+\crefformat{equation}{(#2#1#3)}
+\crefname{lemma}{lemma}{lemmas}
+\crefname{claim}{claim}{claims}
+\crefname{theorem}{theorem}{theorems}
+\crefname{proposition}{proposition}{propositions}
+\crefname{corollary}{corollary}{corollaries}
+\crefname{claim}{claim}{claims}
+\crefname{remark}{remark}{remarks}
+\crefname{definition}{definition}{definitions}
+\crefname{fact}{fact}{facts}
+\crefname{question}{question}{questions}
+\crefname{condition}{condition}{conditions}
+\crefname{algorithm}{algorithm}{algorithms}
+\crefname{assumption}{assumption}{assumptions}
+\crefname{notation}{notation}{notation}
+\crefname{cond}{Condition}{Conditions}
+\crefname{problem}{problem}{problems}
+
+% Probability
+\renewcommand{\Pr}{\operatorname*{\mathbb{P}}}
+\newcommand{\Var}{\operatorname*{\mathrm{Var}}}
+\newcommand{\Cov}{\operatorname*{\mathrm{Cov}}}
+\newcommand{\Exp}{\operatorname*{\mathbb{E}}}
+\newcommand{\from}{\leftarrow}
+\newcommand{\negl}{\mathrm{negl}}
+
+% Asymptotics
+\newcommand{\poly}{\operatorname*{\mathrm{poly}}}
+\newcommand{\polylog}{\operatorname*{\mathrm{polylog}}}
+
+% Distributions
+\newcommand{\Normal}{\mathcal{N}}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+\newcommand{\Bernoulli}{\mathrm{Ber}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\DistD}{\mathcal{D}}
+\newcommand{\DistG}{\mathcal{G}}
+\newcommand{\DTV}{d_\mathrm{TV}}
+\newcommand{\DKL}{D_\mathrm{KL}}
+\renewcommand{\DH}{d_\mathrm{H}}
+\newcommand{\DK}{d_\mathrm{K}}
+
+% Sets and other mathematical constructs
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\PSet}{\mathcal{P}}
+\newcommand{\Real}{\mathbb{R}}
+\newcommand{\Rational}{\mathbb{Q}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\Int}{\mathbb{Z}}
+\newcommand{\argmax}{\operatorname*{\mathrm{arg\,max}}}
+\newcommand{\argmin}{\operatorname*{\mathrm{arg\,min}}}
+\renewcommand{\implies}{\Rightarrow}
+\newcommand{\2}{\{0, 1\}}
+\newcommand{\1}{\mathds{1}}
+
+% Calculus/Analysis
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\Diff}[2][]{\frac{\d#1}{\d#2}}
+\newcommand{\Grad}{\nabla}
+\newcommand{\Del}[2][]{\frac{\partial#1}{\partial#2}}
+
+% Linear algebra
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\lmin}{\lambda_{\min}}
+\newcommand{\lmax}{\lambda_{\max}}
+
+% Miscellaneous
+\newcommand{\eps}{\epsilon}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\Chi}{\cX}
+\newcommand{\sgn}{\mathrm{sgn}}
+
+\newcommand{\new}[1]{{\color{red} #1}}
+
+% Project specific commands
+%
+
+\newcounter{nLectures}
+\newcounter{nTheorems}[nLectures]
+
+\newtheorem{theorem}[nTheorems]{Theorem}
+\newtheorem{corollary}[nTheorems]{Corollary}
+\newtheorem{conjecture}[nTheorems]{Conjecture}
+\newtheorem{lemma}[nTheorems]{Lemma}
+\newtheorem{proposition}[nTheorems]{Proposition}
+\newtheorem{protocol}[nTheorems]{Protocol}
+\newtheorem{claim}[nTheorems]{Claim}
+\newtheorem{fact}[nTheorems]{Fact}
+
+\theoremstyle{definition}
+\newtheorem{definition}[nTheorems]{Definition}
+\newtheorem{problem}[nTheorems]{Problem}
+\newtheorem{intuition}[nTheorems]{Intuition}
+\newtheorem{idea}[nTheorems]{Idea}
+\newtheorem{exercise}[nTheorems]{Exercise}
+\newtheorem{remark}[nTheorems]{Remark}
+
+\makeatletter
+	\let\c@algorithm\c@nTheorems
+\makeatother
+
+\usepackage{xpatch}
+\makeatletter
+\AtBeginDocument{\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}}
+\makeatother
+
+\hbadness=10000
+\vbadness=10000
+
+\setlength{\oddsidemargin}{.25in}
+\setlength{\evensidemargin}{.25in}
+\setlength{\textwidth}{6in}
+\setlength{\topmargin}{-0.4in}
+\setlength{\textheight}{9in}
+
+\newcommand{\lecture}[3]{
+	\setcounter{nLectures}{#1}
+	\renewcommand{\thenTheorems}{\arabic{nLectures}.\arabic{nTheorems}}
+	\renewcommand{\thealgorithm}{\arabic{nLectures}.\arabic{nTheorems}}
+	\noindent
+	\begin{center}
+	\framebox{
+		\vbox{
+		\hbox to 5.78in { {\bf ECS 289A Sublinear Algorithms for Big Data
+		\hfill Winter 2026} }
+		\vspace{4mm}
+		\hbox to 5.78in { {\Large \hfill Lecture \arabic{nLectures}: #2  \hfill} }
+		\vspace{2mm}
+		\hbox to 5.78in { {\it Lecturer: Jasper Lee \hfill Scribe: #3} }
+		}
+	}
+	\end{center}
+	\vspace*{4mm}
+}
+
+\begin{document}
+\lecture{0}{Lecture Title}{Student Name}
+
+\end{document}
