@@ -1,0 +1,145 @@
+/*@font-face {
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+}
+@font-face {
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsx.otf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsi.otf');
+  font-style: italic, oblique;
+}
+@font-face {
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf');
+  font-weight: bold;
+  font-style: italic, oblique;
+}*/
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+   nav {
+      font-size: 10px;
+   }
+}
+
+body {
+   font: 14px Verdana, sans-serif;
+   text-align: justify;
+}
+
+header {
+   text-align: center;
+   width: 100%;
+   color: rgb(200,200,200);
+}
+
+nav {
+   text-align: center;
+   width: 100%;
+}
+
+.navbar {
+    white-space: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+   position: static;
+   overflow: hidden;
+   font: 20px Verdana, sans-serif;
+}
+
+.navbar a {
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(120,120,120);
+}
+
+.dropdown {
+    overflow: hidden;
+    position: relative;
+    display: inline;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: -20px;
+  right: -20px;
+  background-color: rgb(200,200,200);
+  min-width: 115px;
+  z-index: 1;
+  padding-bottom: 5px;
+}
+
+.dropdown-content a {
+  padding: 15px 0px 5px 0px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  text-justify: inter-word;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+iframe {
+   display: block;
+   height: 100%;
+   width: 100%;
+   background-color: transparent;
+   border: 0px none transparent;
+   padding: 0px;
+   scroll-behavior: smooth;
+}
+
+.content {
+   margin: auto;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   width: 80%;
+   max-width: 800px;
+   scroll-behavior: smooth;
+   line-height: 1.5;
+}
+
+.lectures td {
+    min-width: 200px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+
+h4 {
+    text-align: left;
+}
+
+#whole {
+   margin: auto;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   width: 80%;
+}
+
+footer {
+   display: block;
+   text-align: left;
+   padding-bottom: 1px;
+   margin: 0px;
+   background-color: rgb(200, 200, 200);
+}
