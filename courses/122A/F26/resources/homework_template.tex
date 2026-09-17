@@ -1,0 +1,168 @@
+\documentclass[11pt,letter]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{bbm}
+%% download this package and put it in the same directory as this file
+%\usepackage{clrscode3e}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+\usepackage{dsfont}
+\usepackage{bm}
+
+\usepackage{xcolor}
+\definecolor{green}{rgb}{0.0, 0.5, 0.0}
+\usepackage[colorlinks,citecolor=blue,linkcolor=magenta,bookmarks=true,hypertexnames=false]{hyperref}
+\usepackage[nameinlink,capitalize]{cleveref}
+\providecommand\algorithmname{algorithm}
+\crefname{equation}{equation}{equations}
+\crefformat{equation}{(#2#1#3)}
+\crefname{lemma}{lemma}{lemmas}
+\crefname{claim}{claim}{claims}
+\crefname{theorem}{theorem}{theorems}
+\crefname{proposition}{proposition}{propositions}
+\crefname{corollary}{corollary}{corollaries}
+\crefname{claim}{claim}{claims}
+\crefname{remark}{remark}{remarks}
+\crefname{definition}{definition}{definitions}
+\crefname{fact}{fact}{facts}
+\crefname{question}{question}{questions}
+\crefname{condition}{condition}{conditions}
+\crefname{algorithm}{algorithm}{algorithms}
+\crefname{assumption}{assumption}{assumptions}
+\crefname{notation}{notation}{notation}
+\crefname{cond}{Condition}{Conditions}
+\crefname{problem}{problem}{problems}
+
+% Probability
+\renewcommand{\Pr}{\operatorname*{\mathbb{P}}}
+\newcommand{\Var}{\operatorname*{\mathrm{Var}}}
+\newcommand{\Cov}{\operatorname*{\mathrm{Cov}}}
+\newcommand{\Exp}{\operatorname*{\mathbb{E}}}
+\newcommand{\from}{\leftarrow}
+\newcommand{\negl}{\mathrm{negl}}
+
+% Asymptotics
+\newcommand{\poly}{\operatorname*{\mathrm{poly}}}
+\newcommand{\polylog}{\operatorname*{\mathrm{polylog}}}
+
+% Distributions
+\newcommand{\Normal}{\mathcal{N}}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+\newcommand{\Bernoulli}{\mathrm{Ber}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\DistD}{\mathcal{D}}
+\newcommand{\DistG}{\mathcal{G}}
+\newcommand{\DTV}{d_\mathrm{TV}}
+\newcommand{\DKL}{D_\mathrm{KL}}
+\renewcommand{\DH}{d_\mathrm{H}}
+\newcommand{\DK}{d_\mathrm{K}}
+
+% Sets and other mathematical constructs
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\PSet}{\mathcal{P}}
+\newcommand{\Real}{\mathbb{R}}
+\newcommand{\Rational}{\mathbb{Q}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\Int}{\mathbb{Z}}
+\newcommand{\argmax}{\operatorname*{\mathrm{arg\,max}}}
+\newcommand{\argmin}{\operatorname*{\mathrm{arg\,min}}}
+\renewcommand{\implies}{\Rightarrow}
+\newcommand{\2}{\{0, 1\}}
+\newcommand{\1}{\mathds{1}}
+
+% Calculus/Analysis
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\Diff}[2][]{\frac{\d#1}{\d#2}}
+\newcommand{\Grad}{\nabla}
+\newcommand{\Del}[2][]{\frac{\partial#1}{\partial#2}}
+
+% Linear algebra
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\lmin}{\lambda_{\min}}
+\newcommand{\lmax}{\lambda_{\max}}
+
+% Miscellaneous
+\newcommand{\eps}{\epsilon}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\Chi}{\cX}
+\newcommand{\sgn}{\mathrm{sgn}}
+
+\newcommand{\new}[1]{{\color{red} #1}}
+
+% Project specific commands
+%
+
+\newcounter{nTheorems}
+
+\newtheorem{theorem}[nTheorems]{Theorem}
+\newtheorem{corollary}[nTheorems]{Corollary}
+\newtheorem{conjecture}[nTheorems]{Conjecture}
+\newtheorem{lemma}[nTheorems]{Lemma}
+\newtheorem{proposition}[nTheorems]{Proposition}
+\newtheorem{protocol}[nTheorems]{Protocol}
+\newtheorem{claim}[nTheorems]{Claim}
+\newtheorem{fact}[nTheorems]{Fact}
+
+\theoremstyle{definition}
+\newtheorem{definition}[nTheorems]{Definition}
+\newtheorem{problem}[nTheorems]{Problem}
+\newtheorem{intuition}[nTheorems]{Intuition}
+\newtheorem{idea}[nTheorems]{Idea}
+\newtheorem{exercise}[nTheorems]{Exercise}
+\newtheorem{remark}[nTheorems]{Remark}
+
+% Edit these as appropriate
+\newcommand\course{ECS 122A}
+\newcommand\hwnumber{1}                    % <-- homework number
+\newcommand\Namea{Partner 1}           % <-- Name of partner #1
+\newcommand\Nameb{Partner 2}           % <-- Name of partner #2
+\newcommand\Namec{Partner 3}           % <-- Name of partner #3
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\Namea\\\Nameb\\\Namec}
+\chead{\textbf{\Large Homework \hwnumber}}
+\rhead{\course \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+\section*{Problem 1}
+\end{document}
